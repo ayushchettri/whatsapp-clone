@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #e5ddd5;
+  height: 100vh;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 30%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+}
+
+.user-header {
+  background: #ededed;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-box {
+  background: #f6f6f6;
+  padding: 0.5rem;
+}
+
+.search-box input {
+  width: 97%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.chat-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem;
+  border-bottom: 1px solid #f0f0f0;
+  text-decoration: none;
+  color: black;
+}
+
+.chat-item:hover {
+  background: #ebebeb;
+}
+
+.avatar {
+  background: #c1c1c1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.big {
+  width: 50px;
+  height: 50px;
+}
+
+.chat-info p {
+  margin: 0;
+  color: gray;
+  font-size: 13px;
+}
+
+/* Chat area */
+.chat-main {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background: url('https://i.imgur.com/qn4bIhz.png');
+  background-size: cover;
+}
+
+.chat-header {
+  background: #ededed;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.msg {
+  max-width: 60%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.sent {
+  background: #dcf8c6;
+  margin-left: auto;
+}
+
+.received {
+  background: #fff;
+}
+
+.msg span {
+  font-size: 10px;
+  color: gray;
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+}
+
+.chat-form {
+  display: flex;
+  background: #f0f0f0;
+  padding: 0.8rem;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.chat-form button {
+  margin-left: 10px;
+  background: #128c7e;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+
+/* Auth pages */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #e5ddd5;
+}
+
+.auth-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.auth-box input {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+}
+
+button {
+  background: #128c7e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}

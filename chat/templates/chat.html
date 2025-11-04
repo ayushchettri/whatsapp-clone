@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat with {{ receiver.username }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="user-header">
+      <h3>{{ request.user.username }}</h3>
+      <a href="{% url 'logout' %}" class="logout">Logout</a>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search or start new chat">
+    </div>
+    <div class="chat-list">
+      {% for user in users %}
+        <a href="{% url 'chat' user.username %}" class="chat-item">
+          <div class="avatar">{{ user.username|first|upper }}</div>
+          <div class="chat-info">
+            <strong>{{ user.username }}</strong>
+            <p>Click to open chat</p>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="chat-main">
+    <div class="chat-header">
+      <div class="avatar big">{{ receiver.username|first|upper }}</div>
+      <div class="chat-details">
+        <strong>{{ receiver.username }}</strong>
+      </div>
+    </div>
+
+    <div class="chat-box">
+      {% for msg in messages %}
+        <div class="msg {% if msg.sender == request.user %}sent{% else %}received{% endif %}">
+          <p>{{ msg.content }}</p>
+          <span>{{ msg.timestamp|date:"H:i" }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <form method="POST" class="chat-form">{% csrf_token %}
+      <input type="text" name="message" placeholder="Type a message..." required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</body>
+</html>
